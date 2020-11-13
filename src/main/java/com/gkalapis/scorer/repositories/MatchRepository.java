@@ -1,13 +1,13 @@
 package com.gkalapis.scorer.repositories;
 
+import java.util.List;
+
 import org.springframework.data.jpa.repository.Query;
 import org.springframework.data.repository.CrudRepository;
 import org.springframework.data.repository.query.Param;
 import org.springframework.transaction.annotation.Transactional;
 
 import com.gkalapis.scorer.domain.entities.Match;
-
-import java.util.List;
 
 @Transactional
 public interface MatchRepository extends CrudRepository<Match, Long>{
@@ -18,4 +18,6 @@ public interface MatchRepository extends CrudRepository<Match, Long>{
     int findMaxFinishedRound();
 
     List<Match> findByRound(@Param("round") int round);
+    
+    //@Query(SELECT * FROM scorer.match WHERE scorer.match.status='SCHEDULED';
 }
