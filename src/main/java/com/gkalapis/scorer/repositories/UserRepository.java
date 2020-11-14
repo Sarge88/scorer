@@ -10,5 +10,7 @@ import java.util.List;
 @Transactional
 public interface UserRepository extends CrudRepository<User, String>{
 
-    List<User> findAllByOrderByPointsDesc();
+    //List<User> findAllByOrderByPointsDesc();
+
+    List<User> findAll();
 }

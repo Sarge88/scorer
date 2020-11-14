@@ -16,7 +16,5 @@ public class MatchController {
     private MatchRepository matchRepository;
 
     @RequestMapping("/matches/findByStatus")
-    public List<Match> create(String status) {
-    	return matchRepository.findByStatus(status);
-    }
+    public List<Match> list(String status) { return matchRepository.findByStatus(status); }
 }
