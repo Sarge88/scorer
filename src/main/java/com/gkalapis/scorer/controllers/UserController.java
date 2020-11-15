@@ -19,7 +19,7 @@ public class UserController {
     @Autowired
     private UserService userService;
 
-    @RequestMapping("/user/create")
+    @RequestMapping("/users/create")
     public void create(String id, String name) {
         userService.createUserIfNotExists(id, name);
     }
