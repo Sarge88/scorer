@@ -126,7 +126,7 @@ public class PointCalculatorAndPersisterServiceTest {
     }
 
     private User createUser(int points) {
-        return new User("id1", "testUser", points);
+        return new User("testUser", points, "asd");
     }
 
     private User createDefaultUser() {

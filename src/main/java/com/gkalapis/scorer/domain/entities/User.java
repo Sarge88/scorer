@@ -1,17 +1,14 @@
 package com.gkalapis.scorer.domain.entities;
 
-import javax.persistence.Column;
-import javax.persistence.Entity;
-import javax.persistence.Id;
-import javax.persistence.Table;
+import javax.persistence.*;
 
 @Entity
 @Table(name = "user", catalog = "scorer")
 public class User {
 
-    @Column (length = 250)
-	@Id ()
-    private String id;
+    @Id
+    @GeneratedValue(strategy = GenerationType.AUTO)
+    private Long id;
 
     private String name;
 
@@ -21,22 +18,22 @@ public class User {
 
     public User() {}
 
-    public User(String id, String name) {
-        this.id = id;
+    public User(String name, String password) {
         this.name = name;
+        this.password = password;
     }
 
-    public User(String id, String name, int points) {
-        this.id = id;
+    public User(String name, int points, String password) {
         this.name = name;
         this.points = points;
+        this.password = password;
     }
 
-    public String getId() {
+    public Long getId() {
         return id;
     }
 
-    public void setId(String id) {
+    public void setId(Long id) {
         this.id = id;
     }
 

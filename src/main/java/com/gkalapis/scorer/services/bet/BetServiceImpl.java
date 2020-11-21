@@ -32,12 +32,14 @@ public class BetServiceImpl implements BetService {
 		return betRepository.findByUserId(userId);
 	}
 
+
+	//TODO userId delete, instead name
 	@Override
 	public Map<String, Boolean> persistBets(String userId, List<Long> matchIdList, List<Integer> homeTeamGoalsList,
 			List<Integer> awayTeamGoalsList) {
 		Map<String, Boolean> success = new HashMap<>();
 		try {
-			User user = userRepository.findById(userId).get();
+			User user = userRepository.findByName(userId);
 			for (int i = 0; i < matchIdList.size(); i++) {
 				saveOrUpdateBet(matchIdList, homeTeamGoalsList, awayTeamGoalsList, user, i);
 			}

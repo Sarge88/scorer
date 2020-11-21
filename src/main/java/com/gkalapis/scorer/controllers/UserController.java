@@ -20,8 +20,8 @@ public class UserController {
     private UserService userService;
 
     @RequestMapping("/users/create")
-    public void create(String id, String name, String password) {
-        userService.createUserIfNotExists(id, name, password);
+    public String create(String name, String password) {
+        return userService.createUserIfNotExists(name, password);
     }
 
     @RequestMapping("/users/findAll")
