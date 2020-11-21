@@ -13,7 +13,7 @@ public class UserServiceImpl implements UserService{
     private UserRepository userRepository;
 
     @Override
-    public String createUserIfNotExists(String name, String password) {
+    public String createUserIfNotExists(String name, String password) throws Exception {
         User user = userRepository.findByName(name);
         if (user == null) {
             User newUser = new User(name, password);
@@ -21,7 +21,7 @@ public class UserServiceImpl implements UserService{
             return "User is successfully created: " + newUser.getName();
         }
         else{
-            return user.getName() + " already exists!";
+            throw new Exception("Something happened.");
         }
     }
 }

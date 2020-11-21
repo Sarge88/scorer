@@ -20,7 +20,8 @@ public class UserController {
     private UserService userService;
 
     @RequestMapping("/users/create")
-    public String create(String name, String password) {
+    public String create(String name, String password) throws Exception {
+        System.out.println("creation of "+ name + " is started");
         return userService.createUserIfNotExists(name, password);
     }
 
