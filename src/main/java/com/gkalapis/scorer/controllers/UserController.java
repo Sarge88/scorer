@@ -25,6 +25,13 @@ public class UserController {
         return userService.createUserIfNotExists(name, password);
     }
 
+    @RequestMapping("/users/restore")
+    public String restore(String name, String password) throws Exception {
+        System.out.println("restoration of "+ name + " is started");
+
+        return userService.restoreUserIfExists(name, password);
+    }
+
     @RequestMapping("/users/findAll")
     public List<User> findAll(String status) { return userRepository.findAll(); }
 }

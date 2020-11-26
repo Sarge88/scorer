@@ -24,4 +24,15 @@ public class UserServiceImpl implements UserService{
             throw new Exception("Something happened.");
         }
     }
+
+    @Override
+    public String restoreUserIfExists(String name, String password) throws Exception {
+        User user = userRepository.findByName(name);
+        if (user != null && user.getPassword().equals(password)) {
+            return "User is successfully restored: " + name;
+        }
+        else{
+            throw new Exception("User:" + name + " does not exist");
+        }
+    }
 }
