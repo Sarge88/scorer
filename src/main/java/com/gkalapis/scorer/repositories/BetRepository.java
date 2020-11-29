@@ -1,5 +1,6 @@
 package com.gkalapis.scorer.repositories;
 
+import org.springframework.data.jpa.repository.Query;
 import org.springframework.data.repository.CrudRepository;
 import org.springframework.data.repository.query.Param;
 import org.springframework.transaction.annotation.Transactional;
@@ -17,5 +18,6 @@ public interface BetRepository extends CrudRepository<Bet, Long> {
 
     List<Bet> findByMatch(Match match);
 
-    List<Bet> findByUserId(@Param("userId") String userId);
+    @Query("SELECT b FROM Bet b join User u on b.user.id=u.id where u.name = :userName")
+    List<Bet> findByUserName(@Param("userName") String userName);
 }

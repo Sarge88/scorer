@@ -28,18 +28,18 @@ public class BetServiceImpl implements BetService {
 	private MatchRepository matchRepository;
 
 	@Override
-	public List<Bet> listBets(String userId) {
-		return betRepository.findByUserId(userId);
+	public List<Bet> listBets(String userName) {
+		return betRepository.findByUserName(userName);
 	}
 
 
 	//TODO userId delete, instead name
 	@Override
-	public Map<String, Boolean> persistBets(String userId, List<Long> matchIdList, List<Integer> homeTeamGoalsList,
+	public Map<String, Boolean> persistBets(String name, List<Long> matchIdList, List<Integer> homeTeamGoalsList,
 			List<Integer> awayTeamGoalsList) {
 		Map<String, Boolean> success = new HashMap<>();
 		try {
-			User user = userRepository.findByName(userId);
+			User user = userRepository.findByName(name);
 			for (int i = 0; i < matchIdList.size(); i++) {
 				saveOrUpdateBet(matchIdList, homeTeamGoalsList, awayTeamGoalsList, user, i);
 			}

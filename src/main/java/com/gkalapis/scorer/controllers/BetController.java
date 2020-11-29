@@ -15,9 +15,11 @@ public class BetController {
     @Autowired
     private BetService betService;
 
+
+
     @RequestMapping("/bet/list")
-    public List<Bet> listBets(String userId){
-        return betService.listBets(userId);
+    public List<Bet> listBets(String userName){
+        return betService.listBets(userName);
     }
 
     @RequestMapping("/bet/create")
