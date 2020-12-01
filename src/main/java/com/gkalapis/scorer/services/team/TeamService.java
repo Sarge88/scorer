@@ -1,20 +1,17 @@
 package com.gkalapis.scorer.services.team;
 
-import java.io.IOException;
-
-import javax.annotation.PostConstruct;
-
-import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.stereotype.Service;
-
 import com.gkalapis.scorer.domain.entities.Team;
 import com.gkalapis.scorer.football.data.domain.teams.ApiTeam;
 import com.gkalapis.scorer.football.data.domain.teams.TeamWrapper;
 import com.gkalapis.scorer.repositories.TeamRepository;
 import com.gkalapis.scorer.services.common.CommonService;
 import com.gkalapis.scorer.services.football.data.api.FootballDataService;
-
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Service;
 import retrofit2.Call;
+
+import javax.annotation.PostConstruct;
+import java.io.IOException;
 
 @Service
 public class TeamService {

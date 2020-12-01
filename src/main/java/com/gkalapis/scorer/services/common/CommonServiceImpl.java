@@ -1,9 +1,7 @@
 package com.gkalapis.scorer.services.common;
 
-import org.springframework.stereotype.Service;
-
 import com.gkalapis.scorer.services.football.data.api.FootballDataService;
-
+import org.springframework.stereotype.Service;
 import retrofit2.Retrofit;
 import retrofit2.converter.gson.GsonConverterFactory;
 

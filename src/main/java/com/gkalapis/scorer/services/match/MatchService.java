@@ -1,14 +1,5 @@
 package com.gkalapis.scorer.services.match;
 
-import java.io.IOException;
-import java.util.Date;
-import java.util.List;
-
-import org.joda.time.DateTime;
-import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.scheduling.annotation.Scheduled;
-import org.springframework.stereotype.Service;
-
 import com.gkalapis.scorer.domain.MatchResult;
 import com.gkalapis.scorer.domain.entities.Match;
 import com.gkalapis.scorer.domain.entities.Team;
@@ -21,8 +12,15 @@ import com.gkalapis.scorer.repositories.TeamRepository;
 import com.gkalapis.scorer.services.common.CommonService;
 import com.gkalapis.scorer.services.football.data.api.FootballDataService;
 import com.gkalapis.scorer.services.match.pointcalculator.PointCalculatorAndPersisterService;
-
+import org.joda.time.DateTime;
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.scheduling.annotation.Scheduled;
+import org.springframework.stereotype.Service;
 import retrofit2.Call;
+
+import java.io.IOException;
+import java.util.Date;
+import java.util.List;
 
 @Service
 public class MatchService {
@@ -93,7 +91,6 @@ public class MatchService {
         match.setMatchResult(MatchResult.calculateMatchResult(homeTeamGoals, awayTeamGoals));
     }
 
-    // kupahoz jo, h az uj meccseket lementsuk. Vszeg nem kell, illetve postconstructba tenném
     @Scheduled(fixedDelay = oneMinInMs*60*24)
     private void persistMatchesIfNecessary() throws IOException {
         MatchList matchList = getMatchList();

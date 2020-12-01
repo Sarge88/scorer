@@ -1,8 +1,8 @@
 package com.gkalapis.scorer.football.data.domain.matches;
 
-import java.util.Date;
-
 import com.gkalapis.scorer.football.data.domain.teams.ApiTeam;
+
+import java.util.Date;
 
 public class ApiMatch {
 	

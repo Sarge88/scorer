@@ -2,11 +2,10 @@ package com.gkalapis.scorer.controllers;
 
 import com.gkalapis.scorer.domain.entities.User;
 import com.gkalapis.scorer.repositories.UserRepository;
+import com.gkalapis.scorer.services.user.UserService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
-
-import com.gkalapis.scorer.services.user.UserService;
 
 import java.util.List;
 
@@ -33,5 +32,7 @@ public class UserController {
     }
 
     @RequestMapping("/users/findAll")
-    public List<User> findAll(String status) { return userRepository.findAll(); }
+    //public List<User> findAll(String status) { return userRepository.findAll(); }
+    public List<User> findAllByGroupByPointsDesc(String status) { return userRepository.findAllByOrderByPointsDesc(); }
+
 }

@@ -1,9 +1,8 @@
 package com.gkalapis.scorer.repositories;
 
+import com.gkalapis.scorer.domain.entities.User;
 import org.springframework.data.repository.CrudRepository;
 import org.springframework.transaction.annotation.Transactional;
-
-import com.gkalapis.scorer.domain.entities.User;
 
 import java.util.List;
 
@@ -15,4 +14,6 @@ public interface UserRepository extends CrudRepository<User, Long>{
     User findByName(String name);
 
     List<User> findAll();
+
+    List<User> findAllByOrderByPointsDesc();
 }

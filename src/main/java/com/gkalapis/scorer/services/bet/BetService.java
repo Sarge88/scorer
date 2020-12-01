@@ -1,9 +1,9 @@
 package com.gkalapis.scorer.services.bet;
 
+import com.gkalapis.scorer.domain.entities.Bet;
+
 import java.util.List;
 import java.util.Map;
-
-import com.gkalapis.scorer.domain.entities.Bet;
 
 public interface BetService {
 

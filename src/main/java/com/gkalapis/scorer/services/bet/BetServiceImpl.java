@@ -1,12 +1,5 @@
 package com.gkalapis.scorer.services.bet;
 
-import java.util.HashMap;
-import java.util.List;
-import java.util.Map;
-
-import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.stereotype.Service;
-
 import com.gkalapis.scorer.domain.MatchResult;
 import com.gkalapis.scorer.domain.entities.Bet;
 import com.gkalapis.scorer.domain.entities.Match;
@@ -14,6 +7,12 @@ import com.gkalapis.scorer.domain.entities.User;
 import com.gkalapis.scorer.repositories.BetRepository;
 import com.gkalapis.scorer.repositories.MatchRepository;
 import com.gkalapis.scorer.repositories.UserRepository;
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Service;
+
+import java.util.HashMap;
+import java.util.List;
+import java.util.Map;
 
 @Service
 public class BetServiceImpl implements BetService {

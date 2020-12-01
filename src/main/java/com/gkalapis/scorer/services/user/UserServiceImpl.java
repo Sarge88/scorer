@@ -1,10 +1,9 @@
 package com.gkalapis.scorer.services.user;
 
-import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.stereotype.Service;
-
 import com.gkalapis.scorer.domain.entities.User;
 import com.gkalapis.scorer.repositories.UserRepository;
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Service;
 
 @Service
 public class UserServiceImpl implements UserService{
