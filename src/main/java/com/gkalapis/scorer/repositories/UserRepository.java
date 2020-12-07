@@ -9,7 +9,6 @@ import java.util.List;
 @Transactional
 public interface UserRepository extends CrudRepository<User, Long>{
 
-    //List<User> findAllByOrderByPointsDesc();
 
     User findByName(String name);
 
