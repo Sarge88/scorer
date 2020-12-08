@@ -21,10 +21,11 @@ public class BetServiceImpl implements BetService {
 	private BetRepository betRepository;
 
 	@Autowired
-	private UserRepository userRepository;
+	private MatchRepository matchRepository;
 
 	@Autowired
-	private MatchRepository matchRepository;
+	private UserRepository userRepository;
+
 
 	@Override
 	public List<Bet> listBets(String userName) {
@@ -32,10 +33,8 @@ public class BetServiceImpl implements BetService {
 	}
 
 
-	//TODO userId delete, instead name
 	@Override
-	public Map<String, Boolean> persistBets(String name, List<Long> matchIdList, List<Integer> homeTeamGoalsList,
-			List<Integer> awayTeamGoalsList) {
+	public Map<String, Boolean> persistBets(String name, List<Long> matchIdList, List<Integer> homeTeamGoalsList, List<Integer> awayTeamGoalsList) {
 		Map<String, Boolean> success = new HashMap<>();
 		try {
 			User user = userRepository.findByName(name);

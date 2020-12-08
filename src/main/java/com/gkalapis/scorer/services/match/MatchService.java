@@ -65,10 +65,8 @@ public class MatchService {
     }
 
     private boolean elapsed105To130MinsFromStart(Match match) {
-        DateTime matchDate = new DateTime(match.getDateTime());        
-        
+        DateTime matchDate = new DateTime(match.getDateTime());
         // csak bajnokságra jó, mert nincs extra time (+2 félidő)
-
         return matchDate.plusMinutes(110).isBeforeNow() && matchDate.plusMinutes(150).isAfterNow();
     }
 
